@@ -30,6 +30,7 @@ var myApp= new Vue ({
             }
         ],
     },
+
     methods: {
         prevSlide(){
             this.activeSlide--;
@@ -43,7 +44,35 @@ var myApp= new Vue ({
             if (this.activeSlide > this.slides.length -1) {
                 this.activeSlide = 0;
             }
-        }
+        },
 
+        activeClick(){
+            
+            
+            slides.forEach((element, index) => {
+                debugger;
+                if (index === this.activeSlide){
+                    
+                }
+                
+            });
+        //    this.activeSlide = keys
+        }
     }
+    
 });
+
+
+
+
+// document.querySelectorAll('.thumb').forEach((item, index) => {
+
+//     if (item.classList.contains("active")){
+//         
+//     } else if (!item.classList.contains("active") ){
+//         item.classList.add("active");                
+
+//     }
+
+
+// })  
