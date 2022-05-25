@@ -46,17 +46,10 @@ var myApp= new Vue ({
             }
         },
 
-        activeClick(){
-            
-            
-            this.slides.forEach((element, index) => {
-                debugger;
-                if (this.slides[index] === this.activeSlide){
-                    
-                }
-                
-            });
-        //    this.activeSlide = keys
+        activeClick(activeSlide){
+            this.activeSlide = activeSlide
+
+        
         }
     }
     

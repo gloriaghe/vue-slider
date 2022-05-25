@@ -31,7 +31,7 @@
                     <div class="next" @click="nextSlide"></div>
                     <div v-for="(slide, i) in slides" class="thumb" 
                     :class="i === activeSlide ? 'active' : '' " 
-                    :keys="i" @click="activeClick">
+                    :keys="i" @click="activeClick(i)">
                         <img :src="slide.image" :alt="slide.title"/>
                     </div>
                     
