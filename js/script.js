@@ -31,9 +31,8 @@ var myApp= new Vue ({
         ],
     },
     
-    mounted() {
+    created() {
         setInterval(this.autoplay,3000);
-
     },
 
     methods: {
@@ -59,10 +58,13 @@ var myApp= new Vue ({
             this.activeSlide++
             if (this.activeSlide > this.slides.length -1){
                 this.activeSlide = 0;
+            } 
+        },
 
-            }
+        stopInterval(){
+            clearTimeout(this.setInterval)
+           
         }
-        
     }
     
 });
