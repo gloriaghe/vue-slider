@@ -46,10 +46,8 @@ var myApp= new Vue ({
             }
         },
 
-        activeClick(activeSlide){
-            this.activeSlide = activeSlide
-
-        
+        activeClick(slideAttiva){
+            this.activeSlide = slideAttiva
         }
     }
     
