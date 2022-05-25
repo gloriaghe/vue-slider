@@ -32,10 +32,17 @@ var myApp= new Vue ({
     },
     methods: {
         prevSlide(){
-            activeSlide--;
+            this.activeSlide--;
+            if (this.activeSlide < 0){
+                this.activeSlide = this.slides.length - 1;
+            }
         },
+
         nextSlide(){
-            activeSlide++;
+            this.activeSlide++;
+            if (this.activeSlide > this.slides.length -1) {
+                this.activeSlide = 0;
+            }
         }
 
     }
