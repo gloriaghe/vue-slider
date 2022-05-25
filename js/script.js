@@ -30,6 +30,11 @@ var myApp= new Vue ({
             }
         ],
     },
+    
+    mounted() {
+        setInterval(this.autoplay,3000);
+
+    },
 
     methods: {
         prevSlide(){
@@ -47,8 +52,17 @@ var myApp= new Vue ({
         },
 
         activeClick(slideAttiva){
-            this.activeSlide = slideAttiva
+            this.activeSlide = slideAttiva;
+        },
+        
+        autoplay(){
+            this.activeSlide++
+            if (this.activeSlide > this.slides.length -1){
+                this.activeSlide = 0;
+
+            }
         }
+        
     }
     
 });
@@ -56,14 +70,3 @@ var myApp= new Vue ({
 
 
 
-// document.querySelectorAll('.thumb').forEach((item, index) => {
-
-//     if (item.classList.contains("active")){
-//         
-//     } else if (!item.classList.contains("active") ){
-//         item.classList.add("active");                
-
-//     }
-
-
-// })  
