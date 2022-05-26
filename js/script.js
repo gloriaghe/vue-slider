@@ -1,6 +1,7 @@
 var myApp= new Vue ({
     el: "#app",
     data:{
+        autoslider : "",
         activeSlide: 0,
         slides: [
             {
@@ -32,7 +33,7 @@ var myApp= new Vue ({
     },
     
     created() {
-        setInterval(this.autoplay,3000);
+        this.autoslider = setInterval(this.nextSlide,3000);
     },
 
     methods: {
@@ -55,14 +56,11 @@ var myApp= new Vue ({
         },
         
         autoplay(){
-            this.activeSlide++
-            if (this.activeSlide > this.slides.length -1){
-                this.activeSlide = 0;
-            } 
+            this.autoslider = setInterval(this.nextSlide, 3000)
         },
 
         stopInterval(){
-            clearTimeout(this.setInterval)
+            clearInterval(this.autoslider)
            
         }
     }
